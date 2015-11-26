@@ -57,7 +57,7 @@ module Qiita
           end
 
           def highlight(language)
-            Pygments.highlight(code, lexer: language, options: pygments_options)
+            Pygments.highlight(code, lexer: (Pygments::Lexer.find_by_alias(language) ? language : 'text'), options: pygments_options)
           end
 
           def highlighted_node
