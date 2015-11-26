@@ -69,8 +69,8 @@ module Qiita
               nil
             when !has_only_filename?
               sections[0]
-            when linguist_language
-              linguist_language.default_alias_name
+            #when linguist_language
+            #  linguist_language.default_alias_name
             end
           end
 
@@ -84,9 +84,9 @@ module Qiita
             sections[1].nil? && sections[0] && sections[0].include?(".")
           end
 
-          def linguist_language
-            @linguist_language ||= Linguist::Language.find_by_filename(filename).first
-          end
+          #def linguist_language
+          #  @linguist_language ||= Linguist::Language.find_by_filename(filename).first
+          #end
 
           def sections
             @sections ||= (@text || "").split(":")

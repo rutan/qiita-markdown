@@ -1,7 +1,6 @@
 require "cgi"
 require "greenmat"
 require "html/pipeline"
-require "linguist"
 require "mem"
 require "nokogiri"
 require "pygments"
